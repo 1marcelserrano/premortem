@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+npm-debug.log
+.npm
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build / deploy
+dist/
+build/
+.vercel
+*.skill
+# Exceção: skill empacotada na raiz pro install sem-terminal
+!/premortem.skill
