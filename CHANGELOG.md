@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
+## [Unreleased]
+
+### Changed
+- README: instalação para quem não usa terminal em Customize, Skills, + Add, Upload a skill, com o que foi testado e o que ainda não, aviso do que a skill lê e usa, e convite para a comunidade gratuita. O arquivo `.skill` passa a ser baixado pela release do GitHub.
+
 ## [1.0.0] — 2026-06-19
 
 ### Adicionado
