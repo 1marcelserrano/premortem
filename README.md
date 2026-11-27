@@ -82,11 +82,11 @@ Uma skill é um conjunto de instruções que ensina o Claude a fazer uma tarefa 
 
 **O que você precisa ter:** uma conta no Claude e, nas configurações dele, a opção de executar código e criar arquivos ligada (em inglês, "Code execution and file creation"). O Claude pede isso para aceitar skills enviadas. Se o seu Claude é da empresa, o administrador pode precisar liberar o envio de skills.
 
-**Antes de rodar:** para ancorar os cenários na sua realidade, a skill procura rapidamente arquivos de contexto na pasta onde o Claude está aberto (como o `CLAUDE.md` e pastas de memória) e nos arquivos que você citar. Se a pasta tem material que você não quer que ela leia, abra o Claude em outra pasta. Ela também chama ajudantes em paralelo (subagentes) e grava um relatório em HTML.
+**Antes de rodar:** para ancorar os cenários na sua realidade, a skill procura rapidamente arquivos de contexto, como o `CLAUDE.md` e pastas de memória, além dos arquivos que você citar. Se você usa um aplicativo que abre uma pasta do seu computador (como o Claude Code ou o Cowork), ela pode ler essa pasta: abra o Claude em outra pasta se houver material que você não quer que ela leia. Pelo site do Claude, ela trabalha com a conversa e com o que você anexar, e esse comportamento no site não foi testado. Ela também chama ajudantes em paralelo (subagentes) e grava um relatório em HTML.
 
 1. [Baixe o arquivo premortem.skill](https://github.com/1marcelserrano/premortem/releases/latest/download/premortem.skill).
 2. Abra o Claude e entre em Customize, o menu das suas skills.
-3. Clique em + Add e escolha enviar uma skill (Upload a skill). Selecione o arquivo baixado. Se o Claude recusar, troque o final do nome de `.skill` para `.zip` e envie de novo.
+3. Clique em + Add e escolha enviar uma skill (Upload a skill). Selecione o arquivo baixado. Se o Claude recusar o arquivo por causa do formato, troque o final do nome de `.skill` para `.zip` e envie de novo. Se a mensagem falar do conteúdo, como um campo acima do limite de tamanho, trocar o nome não resolve: veja o parágrafo sobre isso mais abaixo.
 4. Confira se a chave ao lado de premortem está ligada.
 5. Abra uma conversa nova e escreva: "roda um premortem disso".
 
