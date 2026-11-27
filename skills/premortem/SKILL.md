@@ -1,25 +1,19 @@
 ---
 name: premortem
 description: |
-  Roda um premortem sobre qualquer plano, lançamento, produto, contratação,
-  pricing, estratégia ou decisão de alto custo de erro. Assume que a decisão
-  JÁ FALHOU num horizonte futuro e trabalha de trás pra frente pra achar todo
-  motivo que a matou — antes de você gastar dinheiro, tempo ou reputação.
-  Método Gary Klein (hindsight prospectivo) + triagem Tigre / Tigre de Papel /
-  Elefante + matriz Probabilidade × Impacto + visão de fora (base rates) +
-  tripwires datados. Entrega plano revisado, premissa oculta exposta e
-  relatório HTML. TRIGGERS: roda um premortem, premortem disso, premortem desse
-  plano, faz um premortem, o que pode matar isso, o que pode dar errado, onde
-  isso quebra, que ponto cego eu tenho, pré-morte, stress test desse plano,
-  testa esse plano, advogado do diabo, devil's advocate, o que estou deixando
-  passar, no que não estou pensando, fura esse plano, ataca esse plano, isso
-  vai dar certo, me prova que isso falha, premortem de lançamento, premortem de
-  contratação, premortem de pricing. Use SEMPRE que houver um plano ou
-  compromisso onde errar custa caro e a decisão ainda pode mudar de rumo.
-  Acione mesmo sem a palavra "premortem" — basta o usuário pedir pra encontrar
-  pontos cegos, furar um plano ou descobrir como algo pode falhar. NÃO dispare
-  em pedido de feedback de texto/draft (isso é edição), pergunta factual com
-  uma resposta certa, ou decisão já tomada e irreversível.
+  Roda um premortem sobre plano, lançamento, produto, contratação, pricing ou
+  decisão de alto custo de erro. Assume que a decisão JÁ FALHOU e trabalha de
+  trás pra frente pra achar o que a matou, antes de você gastar dinheiro, tempo
+  ou reputação. Método Gary Klein, triagem Tigre / Tigre de Papel / Elefante,
+  matriz Probabilidade × Impacto, base rates e alertas datados. Entrega plano
+  revisado, premissa oculta exposta e relatório HTML. TRIGGERS: roda um
+  premortem, premortem disso, faz um premortem, o que pode matar isso, o que
+  pode dar errado, onde isso quebra, que ponto cego eu tenho, stress test desse
+  plano, advogado do diabo, fura esse plano, ataca esse plano, isso vai dar
+  certo. Use quando errar custa caro e a decisão ainda pode mudar de rumo.
+  Acione mesmo sem a palavra premortem, se pedirem pontos cegos ou como algo
+  pode falhar. NÃO dispare em feedback de texto ou draft (isso é edição),
+  pergunta factual com resposta certa, ou decisão já tomada e irreversível.
 ---
 
 # Premortem

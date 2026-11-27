@@ -4,7 +4,7 @@
 
 Uma skill do Claude que roda um *premortem* sobre qualquer decisão de alto custo de erro. Assume que o plano já morreu num futuro próximo e trabalha de trás pra frente pra achar todo motivo que o matou. Um arquivo markdown. Sem servidor, sem dependência, sem estado externo.
 
-[Instalar](#instalar) · [Como funciona](#como-funciona) · [Quando usar](#quando-usar) · [Exemplo](#exemplo) · [FAQ](#faq) · [Página](https://premortem-delta.vercel.app)
+[Instalar](#instalar) · [Como funciona](#como-funciona) · [Quando usar](#quando-usar) · [Exemplo](#exemplo) · [FAQ](#faq) · [Página](https://mscreative.systems/arsenal/premortem)
 
 ---
 
@@ -13,6 +13,12 @@ Um postmortem investiga por que algo morreu depois que morreu. O premortem faz o
 O método é do psicólogo **Gary Klein**, publicado na *Harvard Business Review* (2007). **Daniel Kahneman** — Nobel, autor de *Rápido e Devagar* — chamou de sua técnica de decisão mais valiosa. A base cognitiva é mais antiga: Mitchell, Russo e Pennington mostraram em 1989 que imaginar um evento futuro como já ocorrido aumenta em ~30% a capacidade de apontar suas causas. Google, Goldman Sachs e Procter & Gamble usam antes de decisões grandes.
 
 Feito pra quem decide sob alto custo de erro — fundador, criador, estrategista — e precisa ouvir o que não quer ouvir enquanto ainda dá pra mudar de rumo.
+
+## Veja como fica
+
+![Exemplo de premortem com três ameaças reais, um elefante, a premissa oculta e um alerta com data](docs/exemplo-premortem.png)
+
+O exemplo usa dados inventados: o mesmo workshop de R$ 1.500 descrito abaixo. A skill separa as ameaças reais (Tigres) do que só assusta, nomeia o Elefante e fecha com a premissa oculta e um alerta datado.
 
 ## O problema
 
@@ -72,19 +78,33 @@ Passo a passo completo do método em [`skills/premortem/SKILL.md`](./skills/prem
 
 ## Instalar
 
-```bash
-# Via skills CLI (recomendado)
-npx skills add 1marcelserrano/premortem
+Uma skill é um conjunto de instruções que ensina o Claude a fazer uma tarefa do jeito certo. Você instala uma vez e depois chama pelo nome. Leva alguns minutos, sem terminal.
 
-# Ou manualmente — faça backup antes se a pasta já existir:
-# mv ~/.claude/skills/premortem ~/.claude/skills/premortem.backup
+**O que você precisa ter:** uma conta no Claude e, nas configurações dele, a opção de executar código e criar arquivos ligada (em inglês, "Code execution and file creation"). O Claude pede isso para aceitar skills enviadas. Se o seu Claude é da empresa, o administrador pode precisar liberar o envio de skills.
+
+**Antes de rodar:** para ancorar os cenários na sua realidade, a skill procura rapidamente arquivos de contexto, como o `CLAUDE.md` e pastas de memória, além dos arquivos que você citar. Se você usa um aplicativo que abre uma pasta do seu computador (como o Claude Code ou o Cowork), ela pode ler essa pasta: abra o Claude em outra pasta se houver material que você não quer que ela leia. Pelo site do Claude, ela trabalha com a conversa e com o que você anexar, e esse comportamento no site não foi testado. Ela também chama ajudantes em paralelo (subagentes) e grava um relatório em HTML.
+
+1. [Baixe o arquivo premortem.skill](https://github.com/1marcelserrano/premortem/releases/latest/download/premortem.skill).
+2. Abra o Claude e entre em Customize, o menu das suas skills.
+3. Clique em + Add e escolha enviar uma skill (Upload a skill). Selecione o arquivo baixado. Se o Claude recusar o arquivo por causa do formato, troque o final do nome de `.skill` para `.zip` e envie de novo. Se a mensagem falar do conteúdo, como um campo acima do limite de tamanho, trocar o nome não resolve: veja o parágrafo sobre isso mais abaixo.
+4. Confira se a chave ao lado de premortem está ligada.
+5. Abra uma conversa nova e escreva: "roda um premortem disso".
+
+**O que foi testado:** o envio de um arquivo `.skill` por esse caminho foi feito pelo autor com outras skills dele (Fila de Prioridades e Prompt Chain). O Claude aceitou direto, sem renomear, e a skill já entrou ativada. O premortem.skill 1.0.0 tinha o mesmo defeito medido (descrição com 1400 caracteres), e foi corrigido junto. O envio da versão 1.0.1 foi aceito pelo Claude do autor, e a skill veio ligada. Falta alguém que não seja o autor seguir só este passo a passo, e ver onde o relatório em HTML aparece para quem usa o Claude no site.
+
+Se o Claude recusar o arquivo com a mensagem de que o campo description deve ter no máximo 1024 caracteres, você baixou a versão 1.0.0. Baixe a 1.0.1 ou mais nova na [página de releases](https://github.com/1marcelserrano/premortem/releases/latest).
+
+<details>
+<summary>Para quem já usa o terminal</summary>
+
+```bash
 git clone https://github.com/1marcelserrano/premortem.git
 cp -r premortem/skills/premortem ~/.claude/skills/
 ```
 
-**Verifique:** abra uma sessão nova do Claude e rode `/skills` (ou pergunte "que skills você tem?"). `premortem` deve aparecer. Se não, confira que `~/.claude/skills/premortem/SKILL.md` existe e reinicie a sessão.
+Pela CLI de skills: `npx skills add 1marcelserrano/premortem`. Para conferir, abra uma sessão nova e rode `/skills`. A skill premortem deve aparecer.
 
-**Sem terminal?** Baixe [`premortem.skill`](./premortem.skill) e suba no Claude (Cowork / claude.ai → Skills).
+</details>
 
 ## FAQ
 
@@ -97,6 +117,13 @@ cp -r premortem/skills/premortem ~/.claude/skills/
 **Ela inventa números pra te assustar?** Não. Toda razão de falha precisa de evidência. Razão sem evidência desce pra Tigre de Papel — é o que separa ameaça real de ansiedade.
 
 **É a mesma coisa que pedir "seja crítico"?** Não. Pedir crítica dispara hedge educado. O enquadramento "isso já morreu, explique como" é o mecanismo — é ele que destrava a identificação honesta de falha.
+
+## Comunidade gratuita
+
+Esta skill é um presente. Se você quer construir skills como a Premortem e conversar com quem está fazendo o mesmo, entre na comunidade gratuita:
+
+**[Entrar na comunidade no Skool](https://www.skool.com/marcel-1662/about)**
+
 
 ---
 
