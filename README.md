@@ -90,7 +90,7 @@ Uma skill é um conjunto de instruções que ensina o Claude a fazer uma tarefa 
 4. Confira se a chave ao lado de premortem está ligada.
 5. Abra uma conversa nova e escreva: "roda um premortem disso".
 
-**O que foi testado:** o envio de um arquivo `.skill` por esse caminho foi feito pelo autor com outras skills dele (Fila de Prioridades e Prompt Chain). O Claude aceitou direto, sem renomear, e a skill já entrou ativada. O premortem.skill 1.0.0 tinha o mesmo defeito medido (descrição com 1400 caracteres), e foi corrigido junto. O envio da versão 1.0.1 ainda não foi conferido. Também falta alguém que não seja o autor seguir só este passo a passo, e ver onde o relatório em HTML aparece para quem usa o Claude no site.
+**O que foi testado:** o envio de um arquivo `.skill` por esse caminho foi feito pelo autor com outras skills dele (Fila de Prioridades e Prompt Chain). O Claude aceitou direto, sem renomear, e a skill já entrou ativada. O premortem.skill 1.0.0 tinha o mesmo defeito medido (descrição com 1400 caracteres), e foi corrigido junto. O envio da versão 1.0.1 foi aceito pelo Claude do autor, e a skill veio ligada. Falta alguém que não seja o autor seguir só este passo a passo, e ver onde o relatório em HTML aparece para quem usa o Claude no site.
 
 Se o Claude recusar o arquivo com a mensagem de que o campo description deve ter no máximo 1024 caracteres, você baixou a versão 1.0.0. Baixe a 1.0.1 ou mais nova na [página de releases](https://github.com/1marcelserrano/premortem/releases/latest).
 
